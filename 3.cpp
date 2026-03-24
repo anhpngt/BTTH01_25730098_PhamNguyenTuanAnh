@@ -49,7 +49,8 @@ int main()
 /**
 Initialize a new Fraction with the given numerator and denominator.
 
-Note that the constructor will automatically reduce the fraction to its simplest form.*/
+Note that the constructor will automatically reduce the fraction to its simplest form.
+*/
 Fraction::Fraction(int iNumerator, int iDenominator)
 {
     if (iDenominator == 0)

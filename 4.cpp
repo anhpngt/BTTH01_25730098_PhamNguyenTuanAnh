@@ -4,13 +4,16 @@
 // Lớp: CN1.K2025.2.CNTT
 
 /**
-2. Viết chương trình cho phép người dùng nhập vào hai phân số, tìm phân số lớn
-nhất và xuất kết quả ra màn hình.
+4. Viết chương trình cho phép người dùng nhập vào một dãy gồm n phân số. Tìm
+và xuất ra màn hình phân số lớn nhất. Sắp xếp dãy phân số tăng dần/giảm dần.
 */
 
 #include <iostream>
 #include <numeric>
-#include "2.h"
+#include <algorithm>
+#include "4.h"
+
+#define N 100
 
 using namespace std;
 
@@ -26,31 +29,58 @@ Fraction inputFraction()
 
 int main()
 {
-    cout << "Nhap phan so thu nhat:" << endl;
-    Fraction f1 = inputFraction();
-    cout << "Nhap phan so thu hai:" << endl;
-    Fraction f2 = inputFraction();
+    int n;
+    cout << "Nhap so luong phan so: ";
+    cin >> n;
+    if (n <= 0)
+    {
+        cout << "So luong phan so phai lon hon 0." << endl;
+        return 1;
+    }
 
-    if (f1.CompareTo(f2) > 0)
+    Fraction fractions[N];
+    for (int i = 0; i < n; i++)
     {
-        cout << "Phan so thu nhat lon hon." << endl;
-        cout << "Phan so lon hon la: ";
-        f1.Print();
+        cout << "Nhap phan so thu " << (i + 1) << ":" << endl;
+        fractions[i] = inputFraction();
     }
-    else if (f1.CompareTo(f2) < 0)
+
+    // Find the largest
+    int maxIdx = 0;
+    for (int i = 1; i < n; i++)
     {
-        cout << "Phan so thu hai lon hon." << endl;
-        cout << "Phan so lon hon la: ";
-        f2.Print();
+        if (fractions[i].CompareTo(fractions[maxIdx]) > 0)
+            maxIdx = i;
     }
-    else
-    {
-        cout << "Hai phan so bang nhau." << endl;
-        cout << "Ca hai phan so la: ";
-        f1.Print();
-    }
+    cout << "Phan so lon nhat: ";
+    fractions[maxIdx].Print();
+
+    // Sort ascending
+    sort(fractions,
+         fractions + n,
+         [](Fraction a, Fraction b)
+         { return a.CompareTo(b) < 0; });
+    cout << "Day phan so sap xep tang dan:" << endl;
+    for (int i = 0; i < n; i++)
+        fractions[i].Print();
+
+    // Sort descending
+    sort(fractions,
+         fractions + n,
+         [](Fraction a, Fraction b)
+         { return a.CompareTo(b) > 0; });
+    cout << "Day phan so sap xep giam dan:" << endl;
+    for (int i = 0; i < n; i++)
+        fractions[i].Print();
 
     return 0;
+}
+
+// Default constructor: initializes to 0/1.
+Fraction::Fraction()
+{
+    this->iNumerator = 0;
+    this->iDenominator = 1;
 }
 
 /**
