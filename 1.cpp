@@ -26,9 +26,9 @@ Fraction inputFraction()
 
 int main()
 {
-    Fraction ps1 = inputFraction();
+    Fraction f = inputFraction();
     cout << "Phan so vua nhap: ";
-    ps1.Print();
+    f.Print();
     return 0;
 }
 
