@@ -45,7 +45,7 @@ int main()
     }
     else
     {
-        cout << "Hai phan so bang nhau: ";
+        cout << "Hai phan so bang nhau." << endl;
         cout << "Ca hai phan so la: ";
         f1.Print();
     }
@@ -59,12 +59,12 @@ Initialize a new Fraction with the given numerator and denominator.
 Note that the constructor will automatically reduce the fraction to its simplest form.*/
 Fraction::Fraction(int iNumerator, int iDenominator)
 {
-    this->iNumerator = iNumerator;
-    this->iDenominator = iDenominator;
-    if (this->iDenominator == 0)
+    if (iDenominator == 0)
     {
         throw invalid_argument("Mau so khong duoc bang 0.");
     }
+    this->iNumerator = iNumerator;
+    this->iDenominator = iDenominator;
     reduce();
 }
 
