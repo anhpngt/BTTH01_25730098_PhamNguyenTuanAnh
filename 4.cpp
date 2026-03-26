@@ -103,9 +103,9 @@ Fraction::Fraction(int iNumerator, int iDenominator)
 // Reduce the fraction to its simplest form.
 void Fraction::Reduce()
 {
-    int g = gcd(abs(this->iNumerator), abs(this->iDenominator));
-    this->iNumerator /= g;
-    this->iDenominator /= g;
+    int iGcd = gcd(abs(this->iNumerator), abs(this->iDenominator));
+    this->iNumerator /= iGcd;
+    this->iDenominator /= iGcd;
     // Keep the sign on the numerator
     if (this->iDenominator < 0)
     {
@@ -125,11 +125,11 @@ void Fraction::Print()
 int Fraction::CompareTo(Fraction other)
 {
     // Cross multiply to compare, so that we don't have to deal with floats
-    int lhs = this->iNumerator * other.iDenominator;
-    int rhs = other.iNumerator * this->iDenominator;
-    if (lhs > rhs)
+    int iLhs = this->iNumerator * other.iDenominator;
+    int iRhs = other.iNumerator * this->iDenominator;
+    if (iLhs > iRhs)
         return 1;
-    else if (lhs < rhs)
+    else if (iLhs < iRhs)
         return -1;
     else
         return 0;

@@ -92,19 +92,19 @@ bool Date::IsValid()
 // For reference, see: https://en.wikipedia.org/wiki/Zeller%27s_congruence
 string Date::DayOfWeek()
 {
-    int d = iDay;
-    int m = iMonth;
-    int y = iYear;
-    if (m < 3)
+    int iD = iDay;
+    int iM = iMonth;
+    int iY = iYear;
+    if (iM < 3)
     {
-        m += 12;
-        y--;
+        iM += 12;
+        iY--;
     }
 
-    int h = (d + 13 * (m + 1) / 5 + y + y / 4 - y / 100 + y / 400) % 7;
+    int iH = (iD + 13 * (iM + 1) / 5 + iY + iY / 4 - iY / 100 + iY / 400) % 7;
 
-    string days[] = {"Thu Bay", "Chu Nhat", "Thu Hai", "Thu Ba", "Thu Tu", "Thu Nam", "Thu Sau"};
-    return days[h];
+    string arrDays[] = {"Thu Bay", "Chu Nhat", "Thu Hai", "Thu Ba", "Thu Tu", "Thu Nam", "Thu Sau"};
+    return arrDays[iH];
 }
 
 // Returns the date as a string in the format of dd/mm/yyyy.

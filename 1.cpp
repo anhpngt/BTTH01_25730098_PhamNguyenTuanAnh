@@ -47,9 +47,9 @@ Fraction::Fraction(int iNumerator, int iDenominator)
 // Reduce the fraction to its simplest form.
 void Fraction::Reduce()
 {
-    int g = gcd(abs(this->iNumerator), abs(this->iDenominator));
-    this->iNumerator /= g;
-    this->iDenominator /= g;
+    int iGcd = gcd(abs(this->iNumerator), abs(this->iDenominator));
+    this->iNumerator /= iGcd;
+    this->iDenominator /= iGcd;
     // Keep the sign on the numerator
     if (this->iDenominator < 0)
     {
