@@ -12,13 +12,13 @@ using namespace std;
 class Student
 {
 private:
-    string sName;
-    float fScoreMath;
-    float fScoreLiterature;
+	string sName;
+	float fScoreMath;
+	float fScoreLiterature;
 
 public:
-    Student();
-    Student(string sName, float fScoreMath, float fScoreLiterature);
-    void Print();
-    float AverageScore();
+	Student();
+	Student(string sName, float fScoreMath, float fScoreLiterature);
+	void Print();
+	float AverageScore();
 };

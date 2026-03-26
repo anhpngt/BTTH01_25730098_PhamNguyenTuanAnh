@@ -8,17 +8,17 @@
 class Fraction
 {
 private:
-    int iNumerator;
-    int iDenominator;
+	int iNumerator;
+	int iDenominator;
 
-    void Reduce();
+	void Reduce();
 
 public:
-    Fraction(int iNumerator, int iDenominator);
+	Fraction(int iNumerator, int iDenominator);
 
-    void Print();
-    Fraction Add(Fraction other);
-    Fraction Subtract(Fraction other);
-    Fraction Multiply(Fraction other);
-    Fraction Divide(Fraction other);
+	void Print();
+	Fraction Add(Fraction other);
+	Fraction Subtract(Fraction other);
+	Fraction Multiply(Fraction other);
+	Fraction Divide(Fraction other);
 };

@@ -13,17 +13,17 @@ using namespace std;
 
 int main()
 {
-    string sName;
-    float fScoreMath, fScoreLiterature;
-    cout << "Nhap ho ten: ";
-    getline(cin, sName);
-    cout << "Nhap diem toan: ";
-    cin >> fScoreMath;
-    cout << "Nhap diem van: ";
-    cin >> fScoreLiterature;
-    float fScoreAverage = (fScoreMath + fScoreLiterature) / 2;
-    cout << "Ho ten: " << sName << endl;
-    cout << "Diem trung binh: " << fScoreAverage << endl;
+	string sName;
+	float fScoreMath, fScoreLiterature;
+	cout << "Nhap ho ten: ";
+	getline(cin, sName);
+	cout << "Nhap diem toan: ";
+	cin >> fScoreMath;
+	cout << "Nhap diem van: ";
+	cin >> fScoreLiterature;
+	float fScoreAverage = (fScoreMath + fScoreLiterature) / 2;
+	cout << "Ho ten: " << sName << endl;
+	cout << "Diem trung binh: " << fScoreAverage << endl;
 
-    return 0;
+	return 0;
 }

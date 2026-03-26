@@ -12,13 +12,13 @@ using namespace std;
 class Date
 {
 private:
-    uint iDay;
-    uint iMonth;
-    uint iYear;
+	unsigned int iDay;
+	unsigned int iMonth;
+	unsigned int iYear;
 
 public:
-    Date(uint iDay, uint iMonth, uint iYear);
-    bool IsValid();
-    string DayOfWeek();
-    string ToString(); // to print easily, rather than using Print()
+	Date(unsigned int iDay, unsigned int iMonth, unsigned int iYear);
+	bool IsValid();
+	string DayOfWeek();
+	string ToString(); // to print easily, rather than using Print()
 };
