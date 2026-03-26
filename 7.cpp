@@ -70,14 +70,14 @@ bool Date::IsValid()
                 return false; // day must be between 1 and 30 for these months
             break;
         case 2:
-            if (this -> iYear % 4 == 0 && (this -> iYear % 100 != 0 || this -> iYear % 400 == 0))
+            if (this->iYear % 4 == 0 && (this->iYear % 100 != 0 || this->iYear % 400 == 0))
             {
-                if (this -> iDay < 1 || this -> iDay > 29)
+                if (this->iDay < 1 || this->iDay > 29)
                     return false; // day must be between 1 and 29 for February in a leap year
             }
             else
             {
-                if (this -> iDay < 1 || this -> iDay > 28)
+                if (this->iDay < 1 || this->iDay > 28)
                     return false; // day must be between 1 and 28 for February in a non-leap year
             }
             break;

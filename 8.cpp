@@ -70,14 +70,14 @@ bool Date::IsValid()
                 return false; // day must be between 1 and 30 for these months
             break;
         case 2:
-            if (this -> iYear % 4 == 0 && (this -> iYear % 100 != 0 || this -> iYear % 400 == 0))
+            if (this->iYear % 4 == 0 && (this->iYear % 100 != 0 || this->iYear % 400 == 0))
             {
-                if (this -> iDay < 1 || this -> iDay > 29)
+                if (this->iDay < 1 || this->iDay > 29)
                     return false; // day must be between 1 and 29 for February in a leap year
             }
             else
             {
-                if (this -> iDay < 1 || this -> iDay > 28)
+                if (this->iDay < 1 || this->iDay > 28)
                     return false; // day must be between 1 and 28 for February in a non-leap year
             }
             break;
@@ -92,19 +92,19 @@ bool Date::IsValid()
 // For reference, see: https://en.wikipedia.org/wiki/Zeller%27s_congruence
 string Date::DayOfWeek()
 {
-    int iD = iDay;
-    int iM = iMonth;
-    int iY = iYear;
-    if (iM < 3)
+    int iZDay = iDay;
+    int iZMonth = iMonth;
+    int iZYear = iYear;
+    if (iZMonth < 3)
     {
-        iM += 12;
-        iY--;
+        iZMonth += 12;
+        iZYear--;
     }
 
-    int iH = (iD + 13 * (iM + 1) / 5 + iY + iY / 4 - iY / 100 + iY / 400) % 7;
+    int iDayIndex = (iZDay + 13 * (iZMonth + 1) / 5 + iZYear + iZYear / 4 - iZYear / 100 + iZYear / 400) % 7;
 
     string arrDays[] = {"Thu Bay", "Chu Nhat", "Thu Hai", "Thu Ba", "Thu Tu", "Thu Nam", "Thu Sau"};
-    return arrDays[iH];
+    return arrDays[iDayIndex];
 }
 
 // Returns the date as a string in the format of dd/mm/yyyy.
