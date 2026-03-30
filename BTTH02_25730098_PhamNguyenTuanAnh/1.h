@@ -14,6 +14,8 @@
 #include <iostream>
 #include <string>
 
+using namespace std;
+
 class cPhanSo
 {
 private:

@@ -23,10 +23,10 @@ int main()
     cout << "Phan so thu nhat: " << ps1.ToString() << endl;
     cout << "Phan so thu hai: " << ps2.ToString() << endl;
 
-    cout << "Ket qua phep cong: " << ps1.Cong(ps2).ToString() << endl;
-    cout << "Ket qua phep tru: " << ps1.Tru(ps2).ToString() << endl;
-    cout << "Ket qua phep nhan: " << ps1.Nhan(ps2).ToString() << endl;
-    cout << "Ket qua phep chia: " << ps1.Chia(ps2).ToString() << endl;
+    cout << "=> Ket qua phep cong: " << ps1.Cong(ps2).ToString() << endl;
+    cout << "=> Ket qua phep tru: " << ps1.Tru(ps2).ToString() << endl;
+    cout << "=> Ket qua phep nhan: " << ps1.Nhan(ps2).ToString() << endl;
+    cout << "=> Ket qua phep chia: " << ps1.Chia(ps2).ToString() << endl;
     return 0;
 }
 
