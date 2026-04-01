@@ -18,14 +18,15 @@ using namespace std;
 
 class cDate
 {
-private:
+  private:
     int iDay;
     int iMonth;
     int iYear;
 
     bool IsValid();
     int DaysInMonth();
-public:
+
+  public:
     cDate();
     cDate(int iDay, int iMonth, int iYear);
     static cDate InputFromConsole();

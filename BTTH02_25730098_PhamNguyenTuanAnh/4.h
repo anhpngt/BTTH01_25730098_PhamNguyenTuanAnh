@@ -3,10 +3,10 @@
 // Ngày sinh: 15/05/1996
 // Lớp: CN1.K2025.2.CNTT
 
-// 4. Cài đặt lớp biểu diễn khái niệm thời gian với các thành phần dữ liệu giờ, phút,
-// giây và các thao tác thích hợp (nhập, xuất, thiết lập, thay đổi giờ/phút/giây, lấy
-// giờ/phút/giây, tăng/giảm giờ/phút/giây,…). Viết chương trình minh họa các chức
-// năng đã cài đặt của lớp Thời gian.
+// 4. Cài đặt lớp biểu diễn khái niệm thời gian với các thành phần dữ liệu giờ,
+// phút, giây và các thao tác thích hợp (nhập, xuất, thiết lập, thay đổi
+// giờ/phút/giây, lấy giờ/phút/giây, tăng/giảm giờ/phút/giây,…). Viết chương
+// trình minh họa các chức năng đã cài đặt của lớp Thời gian.
 
 #pragma once
 
@@ -17,14 +17,14 @@ using namespace std;
 
 class cTimestamp
 {
-private:
+  private:
     int iHour;
     int iMinute;
     int iSecond;
 
     bool IsValid();
-    
-    public:
+
+  public:
     cTimestamp();
     cTimestamp(int iHour, int iMinute, int iSecond);
     static cTimestamp InputFromConsole();

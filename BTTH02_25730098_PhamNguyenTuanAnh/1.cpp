@@ -3,11 +3,11 @@
 // Ngày sinh: 15/05/1996
 // Lớp: CN1.K2025.2.CNTT
 
-// 1. Cài đặt lớp cPhanSo để biểu diễn khái niệm phân số với hai thành phần dữ liệu
-// tử số, mẫu số và các hàm thành phần cộng, trừ, nhân, chia hai phân số, các
-// hàm thành phần xuất, nhập, định giá trị cho phân số. Viết chương trình cho
-// phép nhập vào hai phân số, in ra kết quả các phép toán cộng, trừ, nhân, chia hai
-// phân số kể trên.
+// 1. Cài đặt lớp cPhanSo để biểu diễn khái niệm phân số với hai thành phần dữ
+// liệu tử số, mẫu số và các hàm thành phần cộng, trừ, nhân, chia hai phân số,
+// các hàm thành phần xuất, nhập, định giá trị cho phân số. Viết chương trình
+// cho phép nhập vào hai phân số, in ra kết quả các phép toán cộng, trừ, nhân,
+// chia hai phân số kể trên.
 
 #include "1.h"
 
@@ -59,7 +59,8 @@ cPhanSo::cPhanSo()
     cPhanSo(0, 1);
 }
 
-// Parameterized constructor initializes the fraction with given numerator and denominator.
+// Parameterized constructor initializes the fraction with given numerator and
+// denominator.
 cPhanSo::cPhanSo(int iTuSo, int iMauSo)
 {
     if (iMauSo == 0)
@@ -72,7 +73,8 @@ cPhanSo::cPhanSo(int iTuSo, int iMauSo)
     RutGon();
 }
 
-// NhapTuConsole prompts the user to input the numerator and denominator, and returns a cPhanSo object.
+// NhapTuConsole prompts the user to input the numerator and denominator, and
+// returns a cPhanSo object.
 cPhanSo cPhanSo::NhapTuConsole()
 {
     int iTuSo, iMauSo;
@@ -86,13 +88,15 @@ cPhanSo cPhanSo::NhapTuConsole()
     return cPhanSo(iTuSo, iMauSo);
 }
 
-// ToString returns a string representation of the fraction in the form "numerator/denominator".
+// ToString returns a string representation of the fraction in the form
+// "numerator/denominator".
 string cPhanSo::ToString()
 {
     return to_string(this->iTuSo) + "/" + to_string(this->iMauSo);
 }
 
-// Cong adds the current fraction with another fraction and returns the result as a new cPhanSo object.
+// Cong adds the current fraction with another fraction and returns the result
+// as a new cPhanSo object.
 cPhanSo cPhanSo::Cong(cPhanSo other)
 {
     int iTuSo = this->iTuSo * other.iMauSo + other.iTuSo * this->iMauSo;
@@ -101,7 +105,8 @@ cPhanSo cPhanSo::Cong(cPhanSo other)
     return cPhanSo(iTuSo, iMauSo);
 }
 
-// Tru subtracts another fraction from the current fraction and returns the result as a new cPhanSo object.
+// Tru subtracts another fraction from the current fraction and returns the
+// result as a new cPhanSo object.
 cPhanSo cPhanSo::Tru(cPhanSo other)
 {
     int iTuSo = this->iTuSo * other.iMauSo - other.iTuSo * this->iMauSo;
@@ -110,7 +115,8 @@ cPhanSo cPhanSo::Tru(cPhanSo other)
     return cPhanSo(iTuSo, iMauSo);
 }
 
-// Nhan multiplies the current fraction with another fraction and returns the result as a new cPhanSo object.
+// Nhan multiplies the current fraction with another fraction and returns the
+// result as a new cPhanSo object.
 cPhanSo cPhanSo::Nhan(cPhanSo other)
 {
     int iTuSo = this->iTuSo * other.iTuSo;
@@ -119,12 +125,14 @@ cPhanSo cPhanSo::Nhan(cPhanSo other)
     return cPhanSo(iTuSo, iMauSo);
 }
 
-// Chia divides the current fraction by another fraction and returns the result as a new cPhanSo object.
+// Chia divides the current fraction by another fraction and returns the result
+// as a new cPhanSo object.
 cPhanSo cPhanSo::Chia(cPhanSo other)
 {
     if (other.iTuSo == 0)
     {
-        throw std::invalid_argument("Khong the chia cho phan so co tu so bang 0");
+        throw std::invalid_argument(
+            "Khong the chia cho phan so co tu so bang 0");
     }
 
     int iTuSo = this->iTuSo * other.iMauSo;

@@ -13,7 +13,9 @@
 
 using namespace std;
 
-int main() {}
+int main()
+{
+}
 
 // Initialize the date with default values (1 for day, 1 for month, and 1900 for
 // year).
@@ -100,25 +102,46 @@ string cDate::ToString()
 }
 
 // OutputToConsole outputs the date to the console.
-void cDate::OutputToConsole() { cout << this->ToString() << endl; }
+void cDate::OutputToConsole()
+{
+    cout << this->ToString() << endl;
+}
 
 // SetDay sets the day of the date.
-void cDate::SetDay(int iDay) { this->iDay = iDay; }
+void cDate::SetDay(int iDay)
+{
+    this->iDay = iDay;
+}
 
 // SetMonth sets the month of the date.
-void cDate::SetMonth(int iMonth) { this->iMonth = iMonth; }
+void cDate::SetMonth(int iMonth)
+{
+    this->iMonth = iMonth;
+}
 
 // SetYear sets the year of the date.
-void cDate::SetYear(int iYear) { this->iYear = iYear; }
+void cDate::SetYear(int iYear)
+{
+    this->iYear = iYear;
+}
 
 // GetDay gets the day of the date.
-int cDate::GetDay() { return this->iDay; }
+int cDate::GetDay()
+{
+    return this->iDay;
+}
 
 // GetMonth gets the month of the date.
-int cDate::GetMonth() { return this->iMonth; }
+int cDate::GetMonth()
+{
+    return this->iMonth;
+}
 
 // GetYear gets the year of the date.
-int cDate::GetYear() { return this->iYear; }
+int cDate::GetYear()
+{
+    return this->iYear;
+}
 
 // IsLeapYear checks if the current year is a leap year.
 bool cDate::IsLeapYear()

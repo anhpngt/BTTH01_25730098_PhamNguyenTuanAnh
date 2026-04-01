@@ -3,11 +3,11 @@
 // Ngày sinh: 15/05/1996
 // Lớp: CN1.K2025.2.CNTT
 
-// 2. Cài đặt lớp biểu diễn khái niệm điểm trong mặt phẳng với hai thành phần dữ liệu
-// hoành độ và tung độ với các phương thức thiết lập, các hàm thành phần cho
-// phép thay đổi nội dung của điểm, lấy hoành độ, tung độ, thay đổi hoành độ, tung
-// độ, tịnh tiến, nhập, xuất một điểm. Viết chương trình minh họa các chức năng đã
-// cài đặt được
+// 2. Cài đặt lớp biểu diễn khái niệm điểm trong mặt phẳng với hai thành phần dữ
+// liệu hoành độ và tung độ với các phương thức thiết lập, các hàm thành phần
+// cho phép thay đổi nội dung của điểm, lấy hoành độ, tung độ, thay đổi hoành
+// độ, tung độ, tịnh tiến, nhập, xuất một điểm. Viết chương trình minh họa các
+// chức năng đã cài đặt được
 
 #include "2.h"
 
@@ -51,14 +51,16 @@ cDiem::cDiem()
     cDiem(0.0f, 0.0f);
 }
 
-// Parameterized constructor initializes the point with given x and y coordinates.
+// Parameterized constructor initializes the point with given x and y
+// coordinates.
 cDiem::cDiem(float fHoanhDo, float fTungDo)
 {
     this->fHoanhDo = fHoanhDo;
     this->fTungDo = fTungDo;
 }
 
-// NhapTuConsole prompts the user to input the x and y coordinates, and returns a cDiem object.
+// NhapTuConsole prompts the user to input the x and y coordinates, and returns
+// a cDiem object.
 cDiem cDiem::NhapTuConsole()
 {
     float fHoanhDo, fTungDo;
@@ -80,7 +82,8 @@ void cDiem::XuatRaConsole()
 // ToString returns a string representation of the point in the format "(x, y)".
 string cDiem::ToString()
 {
-    return "(" + to_string(this->fHoanhDo) + ", " + to_string(this->fTungDo) + ")";
+    return "(" + to_string(this->fHoanhDo) + ", " + to_string(this->fTungDo) +
+           ")";
 }
 
 // Sets the x-coordinate of the point.
@@ -107,7 +110,8 @@ float cDiem::getTungDo()
     return this->fTungDo;
 }
 
-// Translates the point by adding the given delta x and delta y to the current coordinates.
+// Translates the point by adding the given delta x and delta y to the current
+// coordinates.
 void cDiem::tinhTien(float fDeltaX, float fDeltaY)
 {
     this->fHoanhDo += fDeltaX;

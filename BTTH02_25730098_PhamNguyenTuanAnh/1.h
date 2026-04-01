@@ -3,11 +3,11 @@
 // Ngày sinh: 15/05/1996
 // Lớp: CN1.K2025.2.CNTT
 
-// 1. Cài đặt lớp cPhanSo để biểu diễn khái niệm phân số với hai thành phần dữ liệu
-// tử số, mẫu số và các hàm thành phần cộng, trừ, nhân, chia hai phân số, các
-// hàm thành phần xuất, nhập, định giá trị cho phân số. Viết chương trình cho
-// phép nhập vào hai phân số, in ra kết quả các phép toán cộng, trừ, nhân, chia hai
-// phân số kể trên.
+// 1. Cài đặt lớp cPhanSo để biểu diễn khái niệm phân số với hai thành phần dữ
+// liệu tử số, mẫu số và các hàm thành phần cộng, trừ, nhân, chia hai phân số,
+// các hàm thành phần xuất, nhập, định giá trị cho phân số. Viết chương trình
+// cho phép nhập vào hai phân số, in ra kết quả các phép toán cộng, trừ, nhân,
+// chia hai phân số kể trên.
 
 #pragma once
 
@@ -18,13 +18,13 @@ using namespace std;
 
 class cPhanSo
 {
-private:
+  private:
     int iTuSo;
     int iMauSo;
 
     void RutGon();
 
-public:
+  public:
     cPhanSo();
     cPhanSo(int iTuSo, int iMauSo);
 
