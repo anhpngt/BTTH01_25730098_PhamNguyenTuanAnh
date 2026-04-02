@@ -258,7 +258,13 @@ void cDate::AddDate(cDate date)
 // For reference, see: https://en.wikipedia.org/wiki/Zeller%27s_congruence
 int cDate::GetDateOfWeek()
 {
-    int iDayOfWeek = (iDay + 2 * iMonth + 3 * (iMonth + 1) / 5 + iYear + iYear / 4 - iYear / 100 + iYear / 400) % 7;
+    int m = iMonth, y = iYear;
+    if (m < 3)
+    {
+        m += 12;
+        y--;
+    }
+    int iDayOfWeek = (iDay + 2 * m + 3 * (m + 1) / 5 + y + y / 4 - y / 100 + y / 400) % 7;
     return iDayOfWeek;
 }
 
