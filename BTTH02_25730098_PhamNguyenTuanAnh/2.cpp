@@ -46,10 +46,7 @@ int main()
 }
 
 // Default constructor initializes the point to the origin (0, 0).
-cDiem::cDiem()
-{
-    cDiem(0.0f, 0.0f);
-}
+cDiem::cDiem() : cDiem(0.0f, 0.0f) {}
 
 // Parameterized constructor initializes the point with given x and y
 // coordinates.

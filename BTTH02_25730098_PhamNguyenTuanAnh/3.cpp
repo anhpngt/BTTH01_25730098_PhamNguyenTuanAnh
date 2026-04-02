@@ -40,10 +40,7 @@ int main()
 
 // Initialize the complex number with default values (0.0 for both real and
 // imaginary parts).
-cComplexNumber::cComplexNumber()
-{
-    cComplexNumber(0.0f, 0.0f);
-}
+cComplexNumber::cComplexNumber() : cComplexNumber(0.0f, 0.0f) {}
 
 // Initialize the complex number with the given real and imaginary parts.
 cComplexNumber::cComplexNumber(float fReal, float fImaginary)

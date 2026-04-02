@@ -54,10 +54,7 @@ void cPhanSo::RutGon()
 }
 
 // Default constructor initializes the fraction to zero.
-cPhanSo::cPhanSo()
-{
-    cPhanSo(0, 1);
-}
+cPhanSo::cPhanSo() : cPhanSo(0, 1) {}
 
 // Parameterized constructor initializes the fraction with given numerator and
 // denominator.
