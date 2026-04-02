@@ -25,6 +25,7 @@ public:
     cString();
     cString(string sString);
     cString(const cString& sOther);
+    cString& operator=(const cString& sOther);
     ~cString();
     static cString InputFromConsole();
     void OutputToConsole();

@@ -58,6 +58,25 @@ cString::cString(const cString &sOther)
     }
 }
 
+cString &cString::operator=(const cString &sOther)
+{
+    if (this != &sOther)
+    {
+        delete[] this->pData;
+        this->iLength = sOther.iLength;
+        if (sOther.pData != nullptr)
+        {
+            this->pData = new char[this->iLength + 1];
+            strcpy(this->pData, sOther.pData);
+        }
+        else
+        {
+            this->pData = nullptr;
+        }
+    }
+    return *this;
+}
+
 cString::~cString()
 {
     delete[] this->pData;

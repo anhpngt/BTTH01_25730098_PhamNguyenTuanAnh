@@ -153,19 +153,37 @@ void cDate::OutputToConsole()
 // SetDay sets the day of the date.
 void cDate::SetDay(int iDay)
 {
+    int iOldDay = this->iDay;
     this->iDay = iDay;
+    if (!this->IsValid())
+    {
+        this->iDay = iOldDay;
+        throw invalid_argument("Ngay khong hop le: " + to_string(iDay));
+    }
 }
 
 // SetMonth sets the month of the date.
 void cDate::SetMonth(int iMonth)
 {
+    int iOldMonth = this->iMonth;
     this->iMonth = iMonth;
+    if (!this->IsValid())
+    {
+        this->iMonth = iOldMonth;
+        throw invalid_argument("Thang khong hop le: " + to_string(iMonth));
+    }
 }
 
 // SetYear sets the year of the date.
 void cDate::SetYear(int iYear)
 {
+    int iOldYear = this->iYear;
     this->iYear = iYear;
+    if (!this->IsValid())
+    {
+        this->iYear = iOldYear;
+        throw invalid_argument("Nam khong hop le: " + to_string(iYear));
+    }
 }
 
 // GetDay gets the day of the date.
