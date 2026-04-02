@@ -18,12 +18,13 @@ using namespace std;
 class cString
 {
 private:
-    char* pData;
+    char *pData;
     int iLength;
 
 public:
     cString();
     cString(string sString);
+    cString(const cString& sOther);
     ~cString();
     static cString InputFromConsole();
     void OutputToConsole();

@@ -23,6 +23,12 @@ int main()
     cout << "Chieu dai cuoi ky tu: " << s1.Length() << endl;
     cout << "Chuoi ky tu viet hoa: " << s1.ToUpper().ToString() << endl;
     cout << "Chuoi ky tu viet thuong: " << s1.ToLower().ToString() << endl;
+    cout << "Chuoi ky tu dao nguoc: " << s1.Reversed().ToString() << endl;
+
+    cString s2 = cString::InputFromConsole();
+    cout << "Chuoi ky tu duoc noi tu hai chuoi vua nhap: " << s1.Concat(s2).ToString() << endl;
+
+    return 0;
 }
 
 cString::cString()
@@ -36,6 +42,20 @@ cString::cString(string sString)
     this->iLength = sString.length();
     this->pData = new char[this->iLength + 1];
     strcpy(this->pData, sString.c_str());
+}
+
+cString::cString(const cString &sOther)
+{
+    this->iLength = sOther.iLength;
+    if (sOther.pData != nullptr)
+    {
+        this->pData = new char[this->iLength + 1];
+        strcpy(this->pData, sOther.pData);
+    }
+    else
+    {
+        this->pData = nullptr;
+    }
 }
 
 cString::~cString()
@@ -106,6 +126,19 @@ cString cString::Concat(cString sOther)
     sCombined.iLength = this->iLength + sOther.iLength;
     sCombined.pData = new char[sCombined.iLength + 1];
     strcpy(sCombined.pData, this->pData);
-    strcpy(sCombined.pData, const char *src)
+    strcpy(sCombined.pData + iLength, sOther.pData);
     return sCombined;
+}
+
+cString cString::Reversed()
+{
+    cString sReversed = cString();
+    sReversed.iLength = this->iLength;
+    sReversed.pData = new char[sReversed.iLength + 1];
+    for (int i = 0; i < this->iLength; i++)
+    {
+        sReversed.pData[this->iLength - 1 - i] = this->pData[i];
+    }
+    sReversed.pData[this->iLength] = '\0';
+    return sReversed;
 }
