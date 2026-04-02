@@ -31,6 +31,8 @@ public:
     static cPhanSo NhapTuConsole();
     string ToString();
 
+    void DinhGiaTri(int iTuSo, int iMauSo);
+
     cPhanSo Cong(cPhanSo other);
     cPhanSo Tru(cPhanSo other);
     cPhanSo Nhan(cPhanSo other);

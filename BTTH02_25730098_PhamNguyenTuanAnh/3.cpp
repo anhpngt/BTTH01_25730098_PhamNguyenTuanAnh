@@ -126,6 +126,10 @@ cComplexNumber cComplexNumber::Multiply(cComplexNumber cOther)
 cComplexNumber cComplexNumber::Divide(cComplexNumber cOther)
 {
     float denominator = cOther.fReal * cOther.fReal + cOther.fImaginary * cOther.fImaginary;
+    if (denominator == 0)
+    {
+        throw std::invalid_argument("Khong the chia cho so phuc bang 0");
+    }
     float realPart = (fReal * cOther.fReal + fImaginary * cOther.fImaginary) / denominator;
     float imaginaryPart = (fImaginary * cOther.fReal - fReal * cOther.fImaginary) / denominator;
     return cComplexNumber(realPart, imaginaryPart);

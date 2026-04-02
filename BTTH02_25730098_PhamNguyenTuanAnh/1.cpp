@@ -54,11 +54,26 @@ void cPhanSo::RutGon()
 }
 
 // Default constructor initializes the fraction to zero.
-cPhanSo::cPhanSo() : cPhanSo(0, 1) {}
+cPhanSo::cPhanSo() : cPhanSo(0, 1)
+{
+}
 
 // Parameterized constructor initializes the fraction with given numerator and
 // denominator.
 cPhanSo::cPhanSo(int iTuSo, int iMauSo)
+{
+    if (iMauSo == 0)
+    {
+        throw std::invalid_argument("Mau so khong duoc bang 0");
+    }
+
+    this->iTuSo = iTuSo;
+    this->iMauSo = iMauSo;
+    RutGon();
+}
+
+// DinhGiaTri sets the numerator and denominator of the fraction.
+void cPhanSo::DinhGiaTri(int iTuSo, int iMauSo)
 {
     if (iMauSo == 0)
     {
